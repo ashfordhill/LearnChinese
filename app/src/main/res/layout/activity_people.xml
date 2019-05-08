@@ -4,21 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".VocabReviewActivities.PeopleActivity">
 
-
-    <LinearLayout
+    <ListView
+        android:id="@+id/list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center">
-
-        <Button
-            android:id="@+id/vocab_review_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Vocab Review"
-            android:layout_gravity="center_vertical"/>
-
-    </LinearLayout>
+        android:layout_height="match_parent" />
 
 </android.support.constraint.ConstraintLayout>

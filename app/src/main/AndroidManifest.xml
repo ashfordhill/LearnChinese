@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.learnchinese">
+
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
@@ -10,19 +11,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".VocabReviewMenu.VocabReviewMenu"></activity>
+        <activity android:name=".VocabReviewActivities.PeopleActivity" />
+        <activity android:name=".VocabReviewActivities.VocabActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
         <provider
-            android:name="com.example.learnchinese.data.WordProvider"
+            android:name=".data.WordProvider"
             android:authorities="com.example.learnchinese"
-            android:exported="false">
-
-        </provider>
+            android:exported="false" />
     </application>
 
 </manifest>

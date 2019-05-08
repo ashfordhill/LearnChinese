@@ -92,11 +92,13 @@ public class WordCursorAdapter extends CursorAdapter {
         // Update image view
         icon.setImageResource(getId("test_icon", R.drawable.class));
 
-        // Update sound view
+        // Update button view w/ sound player
         soundButton.setText(chnChar);
-        //MediaPlayer mp = MediaPlayer.create(this, soundID);
+
+        final MediaPlayer mp = MediaPlayer.create(context, R.raw.soundbit);
         soundButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                mp.start();
 
             }
         });

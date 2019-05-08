@@ -24,6 +24,7 @@ public class WordDbHelper extends SQLiteOpenHelper
     private SQLiteDatabase mDataBase;
     private final Context mContext;
 
+    // Fetches the input database location according to android OS version
     public WordDbHelper(Context context)
     {
         super(context, DB_NAME, null, 1);// 1? Its database Version
@@ -37,6 +38,8 @@ public class WordDbHelper extends SQLiteOpenHelper
         this.mContext = context;
     }
 
+
+    // Use when database is first created
     public void createDataBase() throws IOException
     {
         // If the database does not exist, copy it from the assets folder
