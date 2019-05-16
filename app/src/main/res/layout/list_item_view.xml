@@ -37,14 +37,15 @@
 
     <LinearLayout
         android:layout_height="match_parent"
-        android:layout_width="50dp"
+        android:layout_width="60dp"
         android:orientation="vertical">
 
         <Button
             android:id="@+id/word_sound_button"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:gravity="left|center_vertical"
+            android:focusable="false"
+            android:textAlignment="center"
             />
 
 

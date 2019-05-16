@@ -12,7 +12,6 @@ import com.example.learnchinese.VocabReviewMenu.VocabReviewMenu;
 
 public class MainActivity extends AppCompatActivity implements MainActivityView{
 
-    private static final String CATEGORY = "PEOPLE";
     private MainActivityPresenter presenter;
 
 

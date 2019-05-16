@@ -3,9 +3,9 @@ package com.example.learnchinese.VocabReviewActivities;
 import android.os.Bundle;
 
 
-public class PeopleActivity extends VocabActivity {
+public class AnimalsActivity extends VocabActivity {
 
-    private String mCategory = "PEOPLE";
+    private String mCategory = "ANIMALS";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -13,4 +13,9 @@ public class VocabReviewMenuPresenter {
         view.onPeopleClick();
     }
 
+    void onAnimalsClick() {
+        view.onAnimalsClick();
+    }
+
+
 }

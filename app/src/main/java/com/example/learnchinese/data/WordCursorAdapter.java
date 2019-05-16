@@ -33,7 +33,9 @@ public class WordCursorAdapter extends CursorAdapter {
      * @param c       The cursor from which to get the data.
      */
     public WordCursorAdapter(Context context, Cursor c) {
+
         super(context, c, 0 /* flags */);
+
     }
 
     /**
@@ -87,21 +89,27 @@ public class WordCursorAdapter extends CursorAdapter {
         // Update the TextViews with the attributes for the current word
         engNameTextView.setText(english);
         pinyinTextView.setText(pinyin);
-        int res = context.getResources().getIdentifier("test_icon", "Drawable", context.getPackageName());
 
         // Update image view
         icon.setImageResource(getId("test_icon", R.drawable.class));
 
-        // Update button view w/ sound player
+
+        // Update button text
         soundButton.setText(chnChar);
 
-        final MediaPlayer mp = MediaPlayer.create(context, R.raw.soundbit);
-        soundButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                mp.start();
+        final MediaPlayer mp;
 
-            }
-        });
+//        mp = MediaPlayer.create(context, getId(soundID, R.raw.class));
+//
+//        soundButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if(mp != null) {
+//                    mp.start();
+//
+//                }
+//            }
+//        });
 
     }
 

@@ -25,12 +25,8 @@ public class VocabActivity extends AppCompatActivity implements
 
     /** Identifier for the word data loader */
     private static final int WORD_LOADER = 0;
-    private String CATEGORY = "";
-
-    private VocabActivityPresenter presenter;
     private WordCursorAdapter mCursorAdapter;
     private ListView wordListView;
-
 
 
     @Override
@@ -38,12 +34,15 @@ public class VocabActivity extends AppCompatActivity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vocab);
 
+
         // Find the ListView which will be populated with the word data
         wordListView = (ListView) findViewById(R.id.list);
 
         VocabActivityPresenter presenter =
-                new VocabActivityPresenter(this, mCursorAdapter);
+                new VocabActivityPresenter(this, mCursorAdapter, wordListView);
         presenter.displayWords();
+
+
 
     }
 
@@ -55,8 +54,13 @@ public class VocabActivity extends AppCompatActivity implements
     }
 
 
+    public String sendCategory() {
+        return "";
+    }
+
     @Override
     public Loader<Cursor> onCreateLoader(int i, Bundle bundle) {
+
         // Define a projection that specifies the columns from the table we care about.
         String[] projection = {
                 WordEntry._ID,
@@ -77,41 +81,23 @@ public class VocabActivity extends AppCompatActivity implements
                 newUri,   // Provider content URI to query
                 projection,             // Columns to include in the resulting Cursor
                 null,                   // No selection clause
-                new String[]{CATEGORY},                   // No selection arguments
+                new String[]{sendCategory()},                   // No selection arguments
                 null);                  // Default sort order
     }
 
     @Override
     public void onLoadFinished(Loader<Cursor> loader, Cursor data) {
+
         // Update with this new cursor containing updated word data
         mCursorAdapter.swapCursor(data);
     }
 
     @Override
     public void onLoaderReset(Loader<Cursor> loader) {
+
         // Callback called when the data needs to be deleted
         mCursorAdapter.swapCursor(null);
     }
-
-    public String getCategory() {
-        return CATEGORY;
-    }
-
-    public void setCategory(String cat) {
-        CATEGORY = cat;
-    }
-
-    @Override
-    public void queryCategory() {
-
-    }
-
-    @Override
-    public void displayWords() {
-
-    }
-
-
 
 
 }

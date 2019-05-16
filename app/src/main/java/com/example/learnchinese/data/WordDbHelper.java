@@ -21,13 +21,15 @@ public class WordDbHelper extends SQLiteOpenHelper
     private static String TAG = "DataBaseHelper"; // Tag just for the LogCat window
     private static String DB_PATH = "";
     private static String DB_NAME ="words.db";// Database name
+    private static int VERSION = 1;
     private SQLiteDatabase mDataBase;
     private final Context mContext;
+
 
     // Fetches the input database location according to android OS version
     public WordDbHelper(Context context)
     {
-        super(context, DB_NAME, null, 1);// 1? Its database Version
+        super(context, DB_NAME, null, VERSION);// 1? Its database Version
         if(android.os.Build.VERSION.SDK_INT >= 17){
             DB_PATH = context.getApplicationInfo().dataDir + "/databases/";
         }
@@ -59,6 +61,7 @@ public class WordDbHelper extends SQLiteOpenHelper
                 throw new Error("ErrorCopyingDataBase");
             }
         }
+
     }
 
 
@@ -102,6 +105,10 @@ public class WordDbHelper extends SQLiteOpenHelper
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
+        try {
+            copyDataBase();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
