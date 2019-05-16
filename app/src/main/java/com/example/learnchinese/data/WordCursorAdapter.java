@@ -15,7 +15,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.learnchinese.R;
-
 import java.lang.reflect.Field;
 
 
@@ -99,18 +98,20 @@ public class WordCursorAdapter extends CursorAdapter {
 
         final MediaPlayer mp;
 
-//        mp = MediaPlayer.create(context, getId(soundID, R.raw.class));
-//
-//        soundButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                if(mp != null) {
-//                    mp.start();
-//
-//                }
-//            }
-//        });
+        mp = MediaPlayer.create(context, getId("soundbit", R.raw.class));
 
+        soundButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mp.start();
+            }
+        });
+
+    }
+
+    public void onPrepared(MediaPlayer player, boolean flag)
+    {
+        flag = true;
     }
 
     public static int getId(String resourceName, Class<?> c) {

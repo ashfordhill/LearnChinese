@@ -40,9 +40,8 @@ public class VocabActivity extends AppCompatActivity implements
 
         VocabActivityPresenter presenter =
                 new VocabActivityPresenter(this, mCursorAdapter, wordListView);
+
         presenter.displayWords();
-
-
 
     }
 
@@ -54,6 +53,7 @@ public class VocabActivity extends AppCompatActivity implements
     }
 
 
+    @Override
     public String sendCategory() {
         return "";
     }

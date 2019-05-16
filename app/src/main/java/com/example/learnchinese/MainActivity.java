@@ -5,8 +5,10 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ListView;
 
 import com.example.learnchinese.R;
+import com.example.learnchinese.VocabReviewActivities.PeopleActivity;
 import com.example.learnchinese.VocabReviewActivities.VocabActivity;
 import com.example.learnchinese.VocabReviewMenu.VocabReviewMenu;
 
@@ -30,6 +32,8 @@ public class MainActivity extends AppCompatActivity implements MainActivityView{
                 presenter.onVocabReviewClick();
             }
         });
+
+
     }
 
     @Override
@@ -38,4 +42,7 @@ public class MainActivity extends AppCompatActivity implements MainActivityView{
         startActivity(intent);
         finish();
     }
+
+
+
 }

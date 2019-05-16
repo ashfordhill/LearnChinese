@@ -4,16 +4,21 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ListView;
 
+import com.example.learnchinese.MenuOptionAdapter;
 import com.example.learnchinese.R;
 import com.example.learnchinese.VocabReviewActivities.AnimalsActivity;
 import com.example.learnchinese.VocabReviewActivities.PeopleActivity;
 import com.example.learnchinese.VocabReviewActivities.VocabActivity;
 
+
 public class VocabReviewMenu extends AppCompatActivity implements VocabReviewMenuView{
 
     private VocabReviewMenuPresenter presenter;
+    private ListView mVocabOptionView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,25 +27,31 @@ public class VocabReviewMenu extends AppCompatActivity implements VocabReviewMen
 
         presenter = new VocabReviewMenuPresenter(this);
 
-        Button peopleReview = findViewById(R.id.people_review_button);
-        Button animalsReview = findViewById(R.id.animals_review_button);
+        mVocabOptionView = (ListView) findViewById(R.id.vocab_review_option_list);
 
-        peopleReview.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                presenter.onPeopleClick();
-            }
-        });
+        MenuOptionAdapter mMenuOptionAdapter = new MenuOptionAdapter(this);
+        mVocabOptionView.setAdapter(mMenuOptionAdapter);
 
-        animalsReview.setOnClickListener(new View.OnClickListener() {
+        mVocabOptionView.setOnItemClickListener(new android.widget.AdapterView.OnItemClickListener()
+        {
             @Override
-            public void onClick(View v) {
-                presenter.onAnimalsClick();
+            public void onItemClick(AdapterView<?> adapter, View v, int position,
+                                    long arg3)
+            {
+
+                String value = (String)adapter.getItemAtPosition(position);
+                presenter.onVocabReviewMenuOptionClick(value);
+
+
             }
         });
 
     }
 
+    public void launchActivity(Class<?> className) {
+        Intent intent = new Intent(getBaseContext(), className);
+        startActivity(intent);
+    }
 
     @Override
     public void onPeopleClick() {

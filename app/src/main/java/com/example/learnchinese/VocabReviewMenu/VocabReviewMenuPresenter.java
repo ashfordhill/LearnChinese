@@ -17,5 +17,9 @@ public class VocabReviewMenuPresenter {
         view.onAnimalsClick();
     }
 
+    void onVocabReviewMenuOptionClick(String className) {
+        view.launchActivity(ClassTranslater.GetClass(className));
+    }
+
 
 }
