@@ -1,25 +1,27 @@
-package com.example.learnchinese;
+package com.example.learnchinese.VocabReviewMenu;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.example.learnchinese.data.Categories;
+import com.example.learnchinese.R;
+
 import java.util.List;
 
-public class MenuOptionAdapter extends BaseAdapter {
+/* Provides an adapter for the vocabulary selection menu */
+public class VocabReviewMenuAdapter extends BaseAdapter {
 
     private Context context;
     private List<String> categories;
 
-    public MenuOptionAdapter(Context context) {
+    public VocabReviewMenuAdapter(Context context) {
         this.context = context;
         categories = Categories.GetCategories();
     }
-
 
     @Override
     public int getCount() {

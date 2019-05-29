@@ -44,8 +44,8 @@
             android:id="@+id/word_sound_button"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:focusable="false"
             android:textAlignment="center"
+            android:focusable="false"
             />
 
 

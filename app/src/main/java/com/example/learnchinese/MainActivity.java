@@ -40,7 +40,6 @@ public class MainActivity extends AppCompatActivity implements MainActivityView{
     public void openVocabReview() {
         Intent intent = new Intent(this, VocabReviewMenu.class);
         startActivity(intent);
-        finish();
     }
 
 

@@ -2,6 +2,7 @@ package com.example.learnchinese.data;
 
 import android.content.ContentProvider;
 import android.content.ContentValues;
+import android.content.Context;
 import android.content.UriMatcher;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -35,30 +36,22 @@ public class WordProvider extends ContentProvider {
         // should recognize. All paths added to the UriMatcher have a corresponding code to return
         // when a match is found.
 
-        // The content URI of the form "content://com.example.learnchinese/words" will map to the
-        // integer code {@link #WORDS}. This URI is used to provide access to MULTIPLE rows
-        // of the words table.
         sUriMatcher.addURI(WordContract.CONTENT_AUTHORITY, WordContract.PATH_WORDS, WORDS);
 
-        // The content URI of the form "content://com.example.learnchinese/words/#" will map to the
-        // integer code {@link #WORD_ID}. This URI is used to provide access to ONE single row
-        // of the words table.
-        //
-        // In this case, the "#" wildcard is used where "#" can be substituted for an integer.
-        // For example, "content://com.example.android.pets/words/3" matches, but
-        // "content://com.example.android.pets/words" (without a number at the end) doesn't match.
+        // The content URI of the form "content://com.example.learnchinese/words/#/WORD_CATEGORY" will map to the
+        // integer code {@link #WORD_ID}.
         sUriMatcher.addURI(WordContract.CONTENT_AUTHORITY, WordContract.PATH_WORDS + "/*", WORD_CATEGORY);
     }
 
     /** Database helper object */
     //private WordDbAccess mDbAccess;
-    private WordDbHelper dbHelper;
+    private SQLiteDatabase database;
 
 
     @Override
     public boolean onCreate() {
-            //mDbAccess = WordDbAccess.getInstance(getContext());
-        dbHelper = new WordDbHelper(getContext());
+        WordDbHelper wordDbHelper = new WordDbHelper(getContext());
+        database = wordDbHelper.getReadableDatabase();
         return true;
     }
 
@@ -66,14 +59,6 @@ public class WordProvider extends ContentProvider {
     public Cursor query(Uri uri, String[] projection, String selection, String[] selectionArgs,
                         String sortOrder) {
 
-
-        try {
-            dbHelper.createDataBase();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        SQLiteDatabase database = dbHelper.getWritableDatabase();
 
         // This cursor will hold the result of the query
         Cursor cursor;
@@ -90,6 +75,7 @@ public class WordProvider extends ContentProvider {
                 cursor = database.query(WordEntry.TABLE_NAME, projection, selection, selectionArgs,
                         null, null, sortOrder);
                 break;
+
             default:
                 throw new IllegalArgumentException("Cannot query unknown URI " + uri);
         }
@@ -100,7 +86,6 @@ public class WordProvider extends ContentProvider {
     public String getType(Uri uri) {
         return null;
     }
-
 
     public Uri insert(Uri uri, ContentValues values) {
         return null;

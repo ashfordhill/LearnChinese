@@ -5,6 +5,7 @@ import android.app.Activity;
 import com.example.learnchinese.VocabReviewActivities.AnimalsActivity;
 import com.example.learnchinese.VocabReviewActivities.PeopleActivity;
 
+/* Returns the categories option as a class with the help of Categories.java */
 public class ClassTranslater {
 
     private ClassTranslater() {}
@@ -22,7 +23,6 @@ public class ClassTranslater {
             default:
                 c = PeopleActivity.class;
                 break;
-
         }
 
         return c;

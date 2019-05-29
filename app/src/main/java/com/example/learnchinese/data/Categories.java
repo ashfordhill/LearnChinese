@@ -1,8 +1,11 @@
-package com.example.learnchinese;
+package com.example.learnchinese.data;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
+
+/* Class to help return the available categories and match them within the ClassTranslator.java
+    This helps
+ */
 
 public class Categories {
 

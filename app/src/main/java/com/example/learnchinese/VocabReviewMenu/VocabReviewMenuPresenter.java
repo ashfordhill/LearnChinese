@@ -9,13 +9,6 @@ public class VocabReviewMenuPresenter {
         this.view = view;
     }
 
-    void onPeopleClick() {
-        view.onPeopleClick();
-    }
-
-    void onAnimalsClick() {
-        view.onAnimalsClick();
-    }
 
     void onVocabReviewMenuOptionClick(String className) {
         view.launchActivity(ClassTranslater.GetClass(className));

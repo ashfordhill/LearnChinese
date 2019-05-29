@@ -25,7 +25,7 @@
 
         <provider
             android:name=".data.WordProvider"
-            android:authorities="com.example.learnchinese"
+            android:authorities="com.example.learnchinese.data"
             android:exported="false" />
     </application>
 

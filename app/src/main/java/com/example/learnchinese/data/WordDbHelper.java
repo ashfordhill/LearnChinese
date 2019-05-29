@@ -22,6 +22,7 @@ public class WordDbHelper extends SQLiteOpenHelper
     private static String DB_PATH = "";
     private static String DB_NAME ="words.db";// Database name
     private static int VERSION = 1;
+    private static WordDbHelper instance;
     private SQLiteDatabase mDataBase;
     private final Context mContext;
 
@@ -38,11 +39,12 @@ public class WordDbHelper extends SQLiteOpenHelper
             DB_PATH = "/data/data/" + context.getPackageName() + "/databases/";
         }
         this.mContext = context;
+        createDataBase();
     }
 
 
     // Use when database is first created
-    public void createDataBase() throws IOException
+    public void createDataBase()
     {
         // If the database does not exist, copy it from the assets folder
         boolean mDataBaseExist = checkDataBase();

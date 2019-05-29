@@ -2,9 +2,7 @@ package com.example.learnchinese.data;
 
 
 import android.content.Context;
-import android.content.res.Resources;
 import android.database.Cursor;
-import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,7 +11,7 @@ import android.widget.Button;
 import android.widget.CursorAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-
+import android.view.View.OnClickListener;
 import com.example.learnchinese.R;
 import java.lang.reflect.Field;
 
@@ -25,6 +23,9 @@ import java.lang.reflect.Field;
  */
 public class WordCursorAdapter extends CursorAdapter {
 
+
+    private MediaPlayer mMediaPlayer;
+    private Context mContext;
     /**
      * Constructs a new {@link WordCursorAdapter}.
      *
@@ -63,6 +64,9 @@ public class WordCursorAdapter extends CursorAdapter {
      */
     @Override
     public void bindView(View view, Context context, Cursor cursor) {
+
+        mContext = context;
+
         // Find individual views that we want to modify in the list item layout
         TextView engNameTextView = (TextView) view.findViewById(R.id.english_name);
         TextView pinyinTextView = (TextView) view.findViewById(R.id.pinyin);
@@ -82,7 +86,7 @@ public class WordCursorAdapter extends CursorAdapter {
         String pinyin = cursor.getString(pinyinColumnIndex);
         String chnChar = cursor.getString(chnCharColumnIndex);
         String imageID = cursor.getString(imageIDColumnIndex);
-        String soundID = cursor.getString(soundIDColumnIndex);
+        final String soundID = cursor.getString(soundIDColumnIndex);
 
 
         // Update the TextViews with the attributes for the current word
@@ -90,31 +94,22 @@ public class WordCursorAdapter extends CursorAdapter {
         pinyinTextView.setText(pinyin);
 
         // Update image view
-        icon.setImageResource(getId("test_icon", R.drawable.class));
+        icon.setImageResource(getId(soundID, R.drawable.class));
 
 
         // Update button text
         soundButton.setText(chnChar);
 
-        final MediaPlayer mp;
+        // Set on click listener for sound buttons
+        soundButton.setOnClickListener(new SoundButtonOnClickListener(soundID));
 
-        mp = MediaPlayer.create(context, getId("soundbit", R.raw.class));
-
-        soundButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mp.start();
-            }
-        });
 
     }
 
-    public void onPrepared(MediaPlayer player, boolean flag)
-    {
-        flag = true;
-    }
 
+    // Will throw an error if image or sound resource isn't found
     public static int getId(String resourceName, Class<?> c) {
+
         try {
             Field idField = c.getDeclaredField(resourceName);
             return idField.getInt(idField);
@@ -123,4 +118,39 @@ public class WordCursorAdapter extends CursorAdapter {
                     + resourceName + " / " + c, e);
         }
     }
+
+    // Helper to prevent mediaplayer from crashing if user is spamming buttons
+    private void releaseMediaPlayer() {
+
+        // Release mediaplayer if it exists
+        if (mMediaPlayer != null) {
+            mMediaPlayer.release();
+            mMediaPlayer = null;
+
+        }
+    }
+
+    // OnClickListener for the sound buttons in the bindview
+    private class SoundButtonOnClickListener implements OnClickListener {
+
+        private String soundID;
+        public SoundButtonOnClickListener(String soundID) {
+            this.soundID = soundID;
+        }
+
+        @Override
+        public void onClick(View v) {
+            System.out.println(v.getId());
+            releaseMediaPlayer();
+            mMediaPlayer = MediaPlayer.create(mContext, getId(soundID, R.raw.class));
+            mMediaPlayer.start();
+        }
+    }
+
+
+
+
+
 }
+
+
