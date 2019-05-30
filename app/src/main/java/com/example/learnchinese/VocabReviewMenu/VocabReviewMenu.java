@@ -8,8 +8,6 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.learnchinese.R;
-import com.example.learnchinese.VocabReviewActivities.AnimalsActivity;
-import com.example.learnchinese.VocabReviewActivities.PeopleActivity;
 
 
 public class VocabReviewMenu extends AppCompatActivity implements VocabReviewMenuView{

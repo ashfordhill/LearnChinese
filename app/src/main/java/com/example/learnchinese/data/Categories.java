@@ -13,7 +13,10 @@ public class Categories {
 
     public static ArrayList<String> GetCategories() {
         ArrayList<String> categories = new ArrayList<>(Arrays.asList(
+                "Numbers",
+                "Places",
                 "People",
+                "Food",
                 "Animals"));
         return categories;
     }

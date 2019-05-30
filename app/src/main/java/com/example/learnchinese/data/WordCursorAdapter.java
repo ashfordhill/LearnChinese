@@ -94,7 +94,9 @@ public class WordCursorAdapter extends CursorAdapter {
         pinyinTextView.setText(pinyin);
 
         // Update image view
-        icon.setImageResource(getId(soundID, R.drawable.class));
+        if(imageID != "NO_IMAGE") {
+            icon.setImageResource(getId(imageID, R.drawable.class));
+        }
 
 
         // Update button text
