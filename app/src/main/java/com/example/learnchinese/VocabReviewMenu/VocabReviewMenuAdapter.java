@@ -15,11 +15,11 @@ import java.util.List;
 /* Provides an adapter for the vocabulary selection menu */
 public class VocabReviewMenuAdapter extends BaseAdapter {
 
-    private Context context;
+    private Context mContext;
     private List<String> categories;
 
     public VocabReviewMenuAdapter(Context context) {
-        this.context = context;
+        this.mContext = context;
         categories = Categories.GetCategories();
     }
 
@@ -43,7 +43,7 @@ public class VocabReviewMenuAdapter extends BaseAdapter {
 
         // Inflate layout for each list row
         if (convertView == null) {
-            convertView = LayoutInflater.from(context).
+            convertView = LayoutInflater.from(mContext).
                     inflate(R.layout.menu_options_row, parent, false);
         }
 
@@ -54,7 +54,7 @@ public class VocabReviewMenuAdapter extends BaseAdapter {
         TextView textViewItemName = (TextView)
                 convertView.findViewById(R.id.menu_option_text);
 
-        textViewItemName.setText(currentCategory);
+        textViewItemName.setText(currentCategory.toUpperCase());
 
         // returns the view for the current row
         return convertView;

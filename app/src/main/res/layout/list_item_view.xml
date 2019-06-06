@@ -5,49 +5,56 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:padding="16dp">
+    android:padding="25dp"
+    android:background="@drawable/listview_bg">
 
     <ImageView
         android:id="@+id/word_icon_image"
-        android:layout_width="50dp"
-        android:layout_height="50dp" />
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="16dp">
+    </ImageView>
 
     <LinearLayout
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="70dp"
         android:layout_weight="1"
         android:orientation="vertical"
-        android:paddingLeft="16dp">
+        >
 
         <TextView
             android:id="@+id/english_name"
+
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:gravity="center_horizontal" />
+            android:fontFamily="@font/roboto_condensed_bold"
+            android:gravity="center_horizontal"
+            android:textSize="20dp" />
 
         <TextView
             android:id="@+id/pinyin"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:textSize="20dp"
+            android:fontFamily="@font/roboto_condensed_light"
             android:gravity="center_horizontal"/>
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_height="match_parent"
-        android:layout_width="60dp"
-        android:orientation="vertical">
 
         <Button
             android:id="@+id/word_sound_button"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:textAlignment="center"
+            android:textSize="16dp"
+            android:fontFamily="@font/quicksand_medium"
             android:focusable="false"
+            android:background="@drawable/button_selector"
+            android:layout_marginEnd="10dp"
             />
 
 
-    </LinearLayout>
 </LinearLayout>

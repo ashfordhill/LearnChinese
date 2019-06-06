@@ -19,7 +19,6 @@ import com.example.learnchinese.data.WordCursorAdapter;
  * Parent class for word list displaying activities
  */
 
-
 public class VocabActivity extends AppCompatActivity implements
         VocabActivityView, LoaderManager.LoaderCallbacks<Cursor>{
 

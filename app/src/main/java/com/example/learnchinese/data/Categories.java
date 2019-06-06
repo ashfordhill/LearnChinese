@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 /* Class to help return the available categories and match them within the ClassTranslator.java
-    This helps
+        Order matters - vocab review menu will show in order of index
  */
 
 public class Categories {

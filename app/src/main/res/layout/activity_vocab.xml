@@ -6,9 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".VocabReviewActivities.VocabActivity">
 
+
     <ListView
         android:id="@+id/list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:padding="18dp"
+        android:background="@color/listviewBackgroundColor"
+        android:divider="@color/listviewBackgroundColor"
+        android:dividerHeight="10dp"
+        android:scrollbars="none"/>
 
 </android.support.constraint.ConstraintLayout>

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorPrimary">#84CAE6</color>
+    <color name="colorPrimaryDark">#569EBE</color>
+    <color name="colorAccent">#80D1C6</color>
     <color name="colorVocabMenuOption">#C1191B1F</color>
+    <color name="listviewBackgroundColor">#BEDFD4</color>
 </resources>

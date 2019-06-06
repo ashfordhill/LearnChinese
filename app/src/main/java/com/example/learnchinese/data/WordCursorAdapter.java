@@ -21,11 +21,13 @@ import java.lang.reflect.Field;
  * that uses a {@link Cursor} of word data as its data source. This adapter knows
  * how to create list items for each row of word data in the {@link Cursor}.
  */
+
 public class WordCursorAdapter extends CursorAdapter {
 
 
     private MediaPlayer mMediaPlayer;
     private Context mContext;
+
     /**
      * Constructs a new {@link WordCursorAdapter}.
      *
@@ -94,9 +96,7 @@ public class WordCursorAdapter extends CursorAdapter {
         pinyinTextView.setText(pinyin);
 
         // Update image view
-        if(imageID != "NO_IMAGE") {
-            icon.setImageResource(getId(imageID, R.drawable.class));
-        }
+        icon.setImageResource(getId(imageID, R.drawable.class));
 
 
         // Update button text
@@ -121,10 +121,10 @@ public class WordCursorAdapter extends CursorAdapter {
         }
     }
 
-    // Helper to prevent mediaplayer from crashing if user is spamming buttons
+    // Helper to prevent MediaPlayer from crashing if user is spamming buttons
     private void releaseMediaPlayer() {
 
-        // Release mediaplayer if it exists
+        // Release MediaPlayer if it exists; will cut off sound if currently playing
         if (mMediaPlayer != null) {
             mMediaPlayer.release();
             mMediaPlayer = null;
@@ -132,26 +132,25 @@ public class WordCursorAdapter extends CursorAdapter {
         }
     }
 
-    // OnClickListener for the sound buttons in the bindview
+    // OnClickListener for the sound buttons
     private class SoundButtonOnClickListener implements OnClickListener {
 
         private String soundID;
+
         public SoundButtonOnClickListener(String soundID) {
             this.soundID = soundID;
         }
 
         @Override
         public void onClick(View v) {
-            System.out.println(v.getId());
+            // If MediaPlayer is assigned to a different word, dispose of it
             releaseMediaPlayer();
+
+            // Recreate MediaPlayer with a different sound resource
             mMediaPlayer = MediaPlayer.create(mContext, getId(soundID, R.raw.class));
             mMediaPlayer.start();
         }
     }
-
-
-
-
 
 }
 

@@ -44,7 +44,6 @@ public class WordProvider extends ContentProvider {
     }
 
     /** Database helper object */
-    //private WordDbAccess mDbAccess;
     private SQLiteDatabase database;
 
 
@@ -58,7 +57,6 @@ public class WordProvider extends ContentProvider {
     @Override
     public Cursor query(Uri uri, String[] projection, String selection, String[] selectionArgs,
                         String sortOrder) {
-
 
         // This cursor will hold the result of the query
         Cursor cursor;

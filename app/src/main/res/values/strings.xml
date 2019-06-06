@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">learnchinese</string>
+    <string name="app_name">Learn Chinese</string>
+    <string name="activity_vocab_review">Vocab Review</string>
+    <string name="activity_animals">Animals</string>
+    <string name="activity_numbers">Numbers</string>
+    <string name="activity_food">Food</string>
+    <string name="activity_people">People</string>
+    <string name="activity_places">Places</string>
 </resources>

@@ -2,7 +2,6 @@ package com.example.learnchinese.data;
 
 
 import android.content.Context;
-import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import java.io.File;
@@ -18,19 +17,17 @@ import android.util.Log;
  */
 public class WordDbHelper extends SQLiteOpenHelper
 {
-    private static String TAG = "DataBaseHelper"; // Tag just for the LogCat window
-    private static String DB_PATH = "";
-    private static String DB_NAME ="words.db";// Database name
-    private static int VERSION = 1;
-    private static WordDbHelper instance;
-    private SQLiteDatabase mDataBase;
+    private static String TAG = "DataBaseHelper"; // Tag for logging
+    private static String DB_PATH = ""; // Path to internal database on mobile device, differs by OS version
+    private static String DB_NAME ="words.db"; // Database name
+    private static int VERSION = 1; // Do not downgrade. Increasing database version will update database on mobile device
     private final Context mContext;
 
 
     // Fetches the input database location according to android OS version
     public WordDbHelper(Context context)
     {
-        super(context, DB_NAME, null, VERSION);// 1? Its database Version
+        super(context, DB_NAME, null, VERSION); //
         if(android.os.Build.VERSION.SDK_INT >= 17){
             DB_PATH = context.getApplicationInfo().dataDir + "/databases/";
         }
@@ -39,6 +36,7 @@ public class WordDbHelper extends SQLiteOpenHelper
             DB_PATH = "/data/data/" + context.getPackageName() + "/databases/";
         }
         this.mContext = context;
+
         createDataBase();
     }
 
@@ -54,7 +52,7 @@ public class WordDbHelper extends SQLiteOpenHelper
             this.close();
             try
             {
-                //Copy the database from assets
+                // Copy the database from assets
                 copyDataBase();
                 Log.e(TAG, "createDatabase database created");
             }
@@ -75,6 +73,7 @@ public class WordDbHelper extends SQLiteOpenHelper
     }
 
     // Copy the database from the assets folder (should only do this first time app was opened)
+    // This is also called when the version updates to copy the updated database to the mobile device
     private void copyDataBase() throws IOException
     {
         InputStream mInput = mContext.getAssets().open(DB_NAME);
@@ -93,18 +92,11 @@ public class WordDbHelper extends SQLiteOpenHelper
 
 
     @Override
-    public synchronized void close()
-    {
-        if(mDataBase != null)
-            mDataBase.close();
-        super.close();
-    }
-
-    @Override
     public void onCreate(SQLiteDatabase db) {
 
     }
 
+    // Called when this version > version on mobile device
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         try {
