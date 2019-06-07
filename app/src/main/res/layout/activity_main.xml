@@ -58,24 +58,25 @@
                 android:id="@+id/vocab_review_button"
                 android:layout_width="160dp"
                 android:layout_height="70dp"
-                android:layout_margin="10dp"
                 android:layout_gravity="center"
+                android:layout_margin="10dp"
                 android:background="@drawable/button_selector"
-                android:fontFamily="@font/comfortaa_bold"
+                android:fontFamily="@font/sniglet"
+                android:text="@string/vocab"
                 android:textColor="@color/purpleAccent"
-                android:textSize="30sp"
-                android:text="@string/vocab" />
+                android:textSize="35sp" />
+
             <Button
                 android:id="@+id/about_button"
                 android:layout_width="160dp"
                 android:layout_height="70dp"
-                android:layout_margin="10dp"
                 android:layout_gravity="center"
+                android:layout_margin="10dp"
                 android:background="@drawable/button_selector"
-                android:fontFamily="@font/comfortaa_bold"
+                android:fontFamily="@font/sniglet"
+                android:text="@string/about"
                 android:textColor="@color/colorPrimaryLight"
-                android:textSize="30sp"
-                android:text="@string/about" />
+                android:textSize="35sp" />
 
 
         </LinearLayout>
