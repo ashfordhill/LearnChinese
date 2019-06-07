@@ -23,4 +23,4 @@ using a Navigation Architecture Component to handle different fragment navigatio
 # Acknowledgements
 A big thanks to Yu Qi for recording the sound clips in Mandarin, as well as 
 <a href="https://www.flaticon.com/authors/roundicons">Roundicons</a> and <a href="https://www.flaticon.com/authors/Freepik">Freepik</a>
-from www.flations.com for all of the icons.
+from www.flaticons.com for all of the icons.
