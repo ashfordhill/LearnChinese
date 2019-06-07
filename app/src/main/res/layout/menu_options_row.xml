@@ -8,12 +8,14 @@
         android:id="@+id/menu_option_text"
         android:layout_width="match_parent"
         android:layout_height="110dp"
-        android:background="@drawable/vocab_option_selector"
-        android:fontFamily="@font/baloo"
+        android:layout_marginTop="-20dp"
+        android:fontFamily="@font/comfortaa_bold"
         android:gravity="center"
-        android:text="PEOPLE"
+        android:text="people"
         android:textColor="#FFFFFF"
-        android:textSize="60dp" />
+        android:textSize="60dp"
+        android:focusable="false"
+        />
 
 
 

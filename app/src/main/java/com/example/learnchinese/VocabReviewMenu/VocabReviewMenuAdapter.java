@@ -54,7 +54,7 @@ public class VocabReviewMenuAdapter extends BaseAdapter {
         TextView textViewItemName = (TextView)
                 convertView.findViewById(R.id.menu_option_text);
 
-        textViewItemName.setText(currentCategory.toUpperCase());
+        textViewItemName.setText(currentCategory.toLowerCase());
 
         // returns the view for the current row
         return convertView;

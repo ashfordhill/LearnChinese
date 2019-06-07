@@ -7,27 +7,34 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label=""
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".VocabReviewActivities.FoodActivity"
-                  android:label="@string/activity_food">
+        <activity android:name=".AboutActivity"></activity>
+        <activity android:name=".VocabReviewActivities.FoodActivity">
+
+            <!-- android:label="@string/activity_food" -->
         </activity>
-        <activity android:name=".VocabReviewActivities.PlacesActivity"
-                  android:label="@string/activity_places">
+        <activity android:name=".VocabReviewActivities.PlacesActivity">
+
+            <!-- android:label="@string/activity_places" -->
         </activity>
-        <activity android:name=".VocabReviewActivities.NumbersActivity"
-                  android:label="@string/activity_numbers">
+        <activity android:name=".VocabReviewActivities.NumbersActivity">
+
+            <!-- android:label="@string/activity_numbers" -->
         </activity>
-        <activity android:name=".VocabReviewActivities.AnimalsActivity"
-                  android:label="@string/activity_animals">
+        <activity android:name=".VocabReviewActivities.AnimalsActivity">
+
+            <!-- android:label="@string/activity_animals" -->
         </activity>
-        <activity android:name=".VocabReviewActivities.PeopleActivity"
-            android:label="@string/activity_people">
+        <activity android:name=".VocabReviewActivities.PeopleActivity">
+
+            <!-- android:label="@string/activity_people" -->
         </activity>
-        <activity android:name=".VocabReviewMenu.VocabReviewMenu"
-                  android:label="@string/activity_vocab_review">
+        <activity android:name=".VocabReviewMenu.VocabReviewMenu">
+
+            <!-- android:label="@string/activity_vocab_review" -->
         </activity>
         <activity android:name=".VocabReviewActivities.VocabActivity" />
         <activity android:name=".MainActivity">
@@ -42,6 +49,7 @@
             android:name=".data.WordProvider"
             android:authorities="com.example.learnchinese.data"
             android:exported="false" />
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

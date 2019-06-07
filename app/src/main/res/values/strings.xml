@@ -1,9 +1,19 @@
 <resources>
-    <string name="app_name">Learn Chinese</string>
+    <string name="app_name">Pinyu</string>
     <string name="activity_vocab_review">Vocab Review</string>
     <string name="activity_animals">Animals</string>
     <string name="activity_numbers">Numbers</string>
     <string name="activity_food">Food</string>
     <string name="activity_people">People</string>
     <string name="activity_places">Places</string>
+    <string name="vocab">vocab</string>
+    <string name="about">about</string>
+    <string name="thank_you_chinese">谢谢</string>
+
+    <string name="credits_message">Credits to Yu Qi for recording sound files\nCredits to the following icon designers:\n
+        \t\t\tNumbers icons made by <a href="https://www.flaticon.com/authors/roundicons">RoundIcons</a>\n
+        \t\t\tAll other icons made by <a href="https://www.flaticon.com/authors/freepik">Freepik</a>
+
+
+    </string>
 </resources>

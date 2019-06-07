@@ -10,12 +10,13 @@
         android:id="@+id/vocab_review_option_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="30dp"
+        android:padding="45dp"
         android:divider="@color/listviewBackgroundColor"
         android:dividerHeight="20dp"
         android:background="@color/listviewBackgroundColor"
         android:scrollbars="none"
-        android:clickable="false">
+        android:listSelector="@drawable/vocab_option_selector"
+        android:drawSelectorOnTop="false">
 
     </ListView>
 

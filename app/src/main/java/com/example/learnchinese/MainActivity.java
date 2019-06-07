@@ -20,12 +20,20 @@ public class MainActivity extends AppCompatActivity implements MainActivityView{
 
         presenter = new MainActivityPresenter(this);
 
-
-        Button vocabReview = findViewById(R.id.vocab_review_button);
-        vocabReview.setOnClickListener(new View.OnClickListener() {
+        // Set on click listeners for main menu buttons
+        Button vocabReviewButton = findViewById(R.id.vocab_review_button);
+        vocabReviewButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 presenter.onVocabReviewClick();
+            }
+        });
+
+        Button aboutButton = findViewById(R.id.about_button);
+        aboutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                presenter.onAboutClick();
             }
         });
     }
@@ -36,6 +44,11 @@ public class MainActivity extends AppCompatActivity implements MainActivityView{
         startActivity(intent);
     }
 
+    @Override
+    public void openAbout() {
+        Intent intent = new Intent(this, AboutActivity.class);
+        startActivity(intent);
+    }
 
 
 }

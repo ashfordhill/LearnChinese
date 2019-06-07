@@ -18,4 +18,6 @@ public class MainActivityPresenter {
         view.openVocabReview();
     }
 
+    public void onAboutClick() { view.openAbout(); }
+
 }

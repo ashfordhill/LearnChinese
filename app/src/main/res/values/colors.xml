@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#84CAE6</color>
-    <color name="colorPrimaryDark">#569EBE</color>
+    <color name="colorPrimary">#91D5F0</color>
+    <color name="colorPrimaryLight">#8BD1F7</color>
+    <color name="colorPrimaryDark">#56B7E4</color>
     <color name="colorAccent">#80D1C6</color>
+    <color name="orangeAccent">#FFD0C1</color>
+    <color name="purpleAccent">#B2A8E4</color>
     <color name="colorVocabMenuOption">#C1191B1F</color>
-    <color name="listviewBackgroundColor">#BEDFD4</color>
+    <color name="listviewBackgroundColor">#A5E9D5</color>
 </resources>
