@@ -2,7 +2,6 @@ package com.example.learnchinese.VocabReviewActivities;
 
 import android.widget.ListView;
 
-import com.example.learnchinese.WordRepository;
 import com.example.learnchinese.data.WordCursorAdapter;
 
 public class VocabActivityPresenter {
