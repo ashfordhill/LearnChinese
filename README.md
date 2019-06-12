@@ -2,7 +2,7 @@
 This app currently functions like a pocket dictionary. It contains a little over 50 Chinese words spanning different categories.
 
 Pinyu is my first attempt to try and utilize less-naive design practices. I attempt to follow the MVP pattern here
-for my vocab review screens. I'm also utilizing inheritence for the different activitity classes and some static
+for my vocab review screens. I'm also utilizing inheritence and some static
 variables and methods to help with organization and navigation.
 
 <p align="center"> <img src="https://github.com/ashfordhill/LearnChinese/blob/master/screenshots/mainmenu.png" width="300">
