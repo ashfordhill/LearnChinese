@@ -6,7 +6,7 @@ for my vocab review screens. I'm also utilizing inheritence and some static
 variables and methods to help with organization and navigation.
 
 <p align="center">
-<img src="https://github.com/ashfordhill/LearnChinese/blob/master/screenshots/mainmenu.png" width="275">
+<img src="https://github.com/ashfordhill/LearnChinese/blob/master/screenshots/mainmen.png" width="275">
 <img src="https://github.com/ashfordhill/LearnChinese/blob/master/screenshots/categoryscreen.png" width="275">
 <img src="https://github.com/ashfordhill/LearnChinese/blob/master/screenshots/animalsscreen.png" width="275">
 </p>
