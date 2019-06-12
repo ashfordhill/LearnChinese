@@ -28,13 +28,13 @@
                 android:textAlignment="center"
                 android:textSize="95dp"
                 android:textColor="@color/colorPrimaryDark"
-                android:text="pinyu" />
+                android:text="@string/app_name_lowercase"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="a gentle intro to Mandarin"
-                android:fontFamily="@font/open_sans_light"
+                android:text="@string/subTitle"
+                android:fontFamily="@font/open_sans"
                 android:textColor="@color/colorPrimaryLight"
                 android:textSize="23dp"
                 android:textAlignment="center"

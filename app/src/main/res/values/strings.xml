@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Pinyu</string>
+    <string name="app_name_lowercase">pinyu</string>
     <string name="activity_vocab_review">Vocab Review</string>
     <string name="activity_animals">Animals</string>
     <string name="activity_numbers">Numbers</string>
@@ -9,6 +10,7 @@
     <string name="vocab">vocab</string>
     <string name="about">about</string>
     <string name="thank_you_chinese">谢谢</string>
+    <string name="subTitle">a gentle intro to Mandarin</string>
 
     <string name="credits_message">Credits to Yu Qi for recording sound files\nCredits to the following icon designers:\n
         \t\t\tNumbers icons made by <a href="https://www.flaticon.com/authors/roundicons">RoundIcons</a>\n
