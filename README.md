@@ -5,8 +5,11 @@ Pinyu is my first attempt to try and utilize less-naive design practices. I atte
 for my vocab review screens. I'm also utilizing inheritence and some static
 variables and methods to help with organization and navigation.
 
-<p align="center"> <img src="https://github.com/ashfordhill/LearnChinese/blob/master/screenshots/mainmenu.png" width="300">
-<img src="https://github.com/ashfordhill/LearnChinese/blob/master/screenshots/animalsscreen.png" width="300"></p>
+<p align="center">
+<img src="https://github.com/ashfordhill/LearnChinese/blob/master/screenshots/mainmenu.png" width="300">
+<img src="https://github.com/ashfordhill/LearnChinese/blob/master/screenshots/categoryscreen.png" width="300">
+<img src="https://github.com/ashfordhill/LearnChinese/blob/master/screenshots/animalsscreen.png" width="300">
+</p>
 
 # How it works
 Pinyu gets its words from an SQLite database that contains the english word, pinyin, chinese character, category of a word,
